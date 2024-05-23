@@ -111,8 +111,8 @@ public class BackgroundDownload extends CordovaPlugin {
             this.setTargetFileUri(targetFileUri);
             this.notificationTitle = notificationTitle;
             this.uriMatcher = uriMatcher;
-            this.setTempFileUri(Uri.fromFile(new File(android.os.Environment.getExternalStorageDirectory().getPath(),
-                    Uri.parse(targetFileUri).getLastPathSegment() + "." + System.currentTimeMillis())).toString());
+            this.setTempFileUri(Uri.fromFile(new File(android.os.Environment.getExternalStoragePublicDirectory(android.os.Environment.DIRECTORY_DOWNLOADS),
+Uri.parse(targetFileUri).getLastPathSegment() + "." + System.currentTimeMillis())).toString());
             this.callbackContext = callbackContext;
         }
 
